@@ -2,11 +2,18 @@
 	import Content from './Content.svelte';
 	import type { ModalProps } from './types.js';
 
-	let { open = $bindable(false), content, trigger }: ModalProps = $props();
+	let {
+		open = $bindable(false),
+		content,
+		class: c,
+		custom,
+		noCloseBtn,
+		trigger
+	}: ModalProps = $props();
 </script>
 
 {#if open}
-	<Content bind:open>
+	<Content bind:open class={c} {custom} {noCloseBtn}>
 		{@render content()}
 	</Content>
 {/if}

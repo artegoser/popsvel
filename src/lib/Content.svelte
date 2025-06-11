@@ -4,9 +4,7 @@
 	import X from './icons/X.svelte';
 	import { onMount } from 'svelte';
 
-	const button = true;
-
-	let { open = $bindable(), custom, class: c, children }: ContentProps = $props();
+	let { open = $bindable(), custom, class: c, noCloseBtn, children }: ContentProps = $props();
 
 	let container: HTMLDivElement;
 
@@ -28,7 +26,7 @@
 </script>
 
 <div
-	class={`cont`}
+	class="cont"
 	role="dialog"
 	onclick={clicked}
 	onkeyup={keyPressed}
@@ -37,11 +35,12 @@
 	bind:this={container}
 	transition:fade={{ duration: 150 }}
 >
-	{#if button}
+	{#if !noCloseBtn}
 		<button class="btn" aria-label="close">
 			<X />
 		</button>
 	{/if}
+
 	<div
 		class={`content${c ? ` ${c}` : ''}`}
 		class:basic={!custom}
