@@ -1,5 +1,2 @@
-import Modal from './Modal.svelte';
-import Content from './Content.svelte';
-import Trigger from './Trigger.svelte';
-
-export { Modal, Content, Trigger };
+export { default as Modal } from './Modal.svelte';
+export type { ModalProps, ContentProps } from './types.js';
