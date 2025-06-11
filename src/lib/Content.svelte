@@ -31,6 +31,7 @@
 	onclick={clicked}
 	onkeyup={keyPressed}
 	onmousedown={clicked}
+	class:basic={!custom}
 	tabindex="0"
 	bind:this={container}
 	transition:fade={{ duration: 150 }}
@@ -62,21 +63,27 @@
 		background-color: rgba(0, 0, 0, 0.4);
 	}
 
+	.cont.basic {
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
+	}
+
 	.content {
 		position: relative;
 	}
 
-	.basic {
+	.content.basic {
+		box-sizing: border-box;
+
 		background-color: white;
 		border-radius: 0.25rem;
 
+		width: 100%;
 		max-width: 512px;
-
-		top: 50%;
-		left: 0;
-		right: 0;
-		margin: auto;
-		transform: translateY(-50%);
 
 		border-radius: 1rem;
 		padding: 1rem;
