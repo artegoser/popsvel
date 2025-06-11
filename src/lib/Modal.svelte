@@ -1,24 +1,32 @@
-<script>
-  import { id } from "./store";
-  import { setContext } from "svelte";
-  export let big = false;
-  export let fullscreen = false;
-  export let small = false;
-  export let button = true;
-  export let basic = false;
-  export let close = false;
+<script lang="ts">
+	import Content from './Content.svelte';
+	import type { ModalProps } from './types.js';
 
-  setContext("modalId", Symbol());
-  setContext("fullscreen", fullscreen);
-  setContext("big", big);
-  setContext("small", small);
-  setContext("button", button);
-  setContext("basic", basic);
-  setContext("rest", $$restProps);
-
-  $: {
-    if (close) $id = false;
-  }
+	let { open = $bindable(false), content, trigger }: ModalProps = $props();
 </script>
 
-<slot />
+{#if open}
+	<Content bind:open>
+		{@render content()}
+	</Content>
+{/if}
+
+<section
+	class="trigger"
+	onkeyup={({ code }) => {
+		if (code === 'Enter') {
+			open = true;
+		}
+	}}
+	onclick={() => (open = true)}
+	role="button"
+	tabindex="0"
+>
+	{@render trigger()}
+</section>
+
+<style>
+	.trigger {
+		cursor: pointer;
+	}
+</style>

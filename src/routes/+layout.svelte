@@ -1,10 +1,5 @@
-<div class="container">
-  <slot />
-</div>
+<script lang="ts">
+	let { children } = $props();
+</script>
 
-<style>
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-</style>
+{@render children()}
