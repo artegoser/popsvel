@@ -86,7 +86,7 @@
 		max-width: 512px;
 
 		border-radius: 1rem;
-		padding: 1rem;
+		padding: 2rem;
 	}
 
 	.btn {
