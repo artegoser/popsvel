@@ -66,8 +66,8 @@
 	.cont.basic {
 		box-sizing: border-box;
 		display: flex;
-		flex-direction: column;
-		align-items: center;
+		align-items: safe center;
+		justify-content: safe center;
 		padding: 1rem;
 	}
 
