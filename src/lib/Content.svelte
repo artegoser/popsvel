@@ -67,7 +67,6 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 		align-items: center;
 		padding: 1rem;
 	}
@@ -91,10 +90,11 @@
 
 	.btn {
 		z-index: 99999;
-		position: absolute;
+		position: fixed;
 		background: none;
 		border: none;
-		color: white;
+		color: rgb(255, 255, 255);
+		filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 1));
 		top: 0;
 		right: 0;
 		cursor: pointer;
