@@ -25,31 +25,33 @@
 	});
 </script>
 
-<div
-	class="cont"
-	role="dialog"
-	onclick={clicked}
-	onkeyup={keyPressed}
-	onmousedown={clicked}
-	class:basic={!custom}
-	tabindex="0"
-	bind:this={container}
-	transition:fade={{ duration: 150 }}
->
-	{#if !noCloseBtn}
-		<button class="btn" aria-label="close">
-			<X />
-		</button>
-	{/if}
-
+{#if open}
 	<div
-		class={`content${c ? ` ${c}` : ''}`}
+		class="cont"
+		role="dialog"
+		onclick={clicked}
+		onkeyup={keyPressed}
+		onmousedown={clicked}
 		class:basic={!custom}
-		transition:scale={{ duration: 150, start: 0.9 }}
+		tabindex="0"
+		bind:this={container}
+		transition:fade={{ duration: 150 }}
 	>
-		{@render children()}
+		{#if !noCloseBtn}
+			<button class="btn" aria-label="close">
+				<X />
+			</button>
+		{/if}
+
+		<div
+			class={`content${c ? ` ${c}` : ''}`}
+			class:basic={!custom}
+			transition:scale={{ duration: 150, start: 0.9 }}
+		>
+			{@render children()}
+		</div>
 	</div>
-</div>
+{/if}
 
 <style>
 	.cont {

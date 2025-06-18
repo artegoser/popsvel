@@ -12,11 +12,9 @@
 	}: SimpleModalProps = $props();
 </script>
 
-{#if open}
-	<Popup bind:open class={c} {custom} {noCloseBtn}>
-		{@render content()}
-	</Popup>
-{/if}
+<Popup bind:open class={c} {custom} {noCloseBtn}>
+	{@render content()}
+</Popup>
 
 <section
 	class="trigger"
