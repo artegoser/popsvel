@@ -1,9 +1,9 @@
 <script>
-	import Modal from '$lib/Modal.svelte';
+	import SimpleModal from '$lib/SimpleModal.svelte';
 </script>
 
 <div class="main">
-	<Modal>
+	<SimpleModal>
 		{#snippet content()}
 			<div>Popup</div>
 			<div>Popup</div>
@@ -12,7 +12,7 @@
 		{#snippet trigger()}
 			<div>Click</div>
 		{/snippet}
-	</Modal>
+	</SimpleModal>
 </div>
 
 <style>

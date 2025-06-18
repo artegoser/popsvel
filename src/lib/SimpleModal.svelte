@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Content from './Content.svelte';
-	import type { ModalProps } from './types.js';
+	import Popup from './Popup.svelte';
+	import type { SimpleModalProps } from './types.js';
 
 	let {
 		open = $bindable(false),
@@ -9,13 +9,13 @@
 		custom,
 		noCloseBtn,
 		trigger
-	}: ModalProps = $props();
+	}: SimpleModalProps = $props();
 </script>
 
 {#if open}
-	<Content bind:open class={c} {custom} {noCloseBtn}>
+	<Popup bind:open class={c} {custom} {noCloseBtn}>
 		{@render content()}
-	</Content>
+	</Popup>
 {/if}
 
 <section

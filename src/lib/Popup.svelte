@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { fade, scale, slide } from 'svelte/transition';
-	import type { ContentProps } from './types.js';
+	import type { PopupProps } from './types.js';
 	import X from './icons/X.svelte';
 	import { onMount } from 'svelte';
 
-	let { open = $bindable(), custom, class: c, noCloseBtn, children }: ContentProps = $props();
+	let { open = $bindable(), custom, class: c, noCloseBtn, children }: PopupProps = $props();
 
 	let container: HTMLDivElement;
 
@@ -45,7 +45,7 @@
 	<div
 		class={`content${c ? ` ${c}` : ''}`}
 		class:basic={!custom}
-		transition:scale={{ duration: 150 }}
+		transition:scale={{ duration: 150, start: 0.9 }}
 	>
 		{@render children()}
 	</div>

@@ -1,6 +1,6 @@
 import type { Snippet } from 'svelte';
 
-export interface ModalProps {
+export interface SimpleModalProps {
 	class?: string;
 	custom?: boolean;
 	noCloseBtn?: boolean;
@@ -9,7 +9,7 @@ export interface ModalProps {
 	trigger: Snippet;
 }
 
-export interface ContentProps {
+export interface PopupProps {
 	class?: string;
 	custom?: boolean;
 	noCloseBtn?: boolean;

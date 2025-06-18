@@ -1,2 +1,3 @@
-export { default as Modal } from './Modal.svelte';
-export type { ModalProps, ContentProps } from './types.js';
+export { default as SimpleModal } from './SimpleModal.svelte';
+export { default as Popup } from './Popup.svelte';
+export type { SimpleModalProps, PopupProps } from './types.js';
